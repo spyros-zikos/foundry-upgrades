@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.18;
 
-import {Script} from "forge-std/Script.sol";
+import {Script, console} from "forge-std/Script.sol";
 import {DevOpsTools} from "lib/foundry-devops/src/DevOpsTools.sol";
 import {BoxV2} from "../src/BoxV2.sol";
 import {BoxV1} from "../src/BoxV1.sol";
@@ -15,6 +15,7 @@ contract UpgradeBox is Script {
         BoxV2 newBox = new BoxV2();
         vm.stopBroadcast();
         address proxy = upgradeBox(mostRecentlyDeployed, address(newBox));
+        console.log("proxy address: ", proxy);
         return proxy;
     }
 

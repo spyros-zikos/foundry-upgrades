@@ -36,6 +36,7 @@ If you're having a hard time installing the chainlink library, you can optionall
 
 ```
 forge install smartcontractkit/chainlink-brownie-contracts@0.6.1 --no-commit
+forge install openzeppelin/openzeppelin-contracts-upgradable --no-commit
 ```
 
 ## Deploy
